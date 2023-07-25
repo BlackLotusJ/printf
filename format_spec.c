@@ -16,4 +16,13 @@ int print_string(va_list list)
 	}
 	return (i);
 }
-
+/**
+ * print_char - outputs a character
+ * @list: list if args
+ * Return: 1 success
+ */
+int print_char(va_list list)
+{
+	_write_char(va_arg (list, int));
+	return (1);
+}
