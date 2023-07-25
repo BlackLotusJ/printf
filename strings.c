@@ -27,29 +27,29 @@ int print_reverse(va_list arg)
  *
  * Return: encode string
  */
-char *rot13(va_list list)
+int rot13(va_list list)
 {
-	int i, j;
+	int i;
+	int x;
 	char *str;
-
-	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(list, char *);
-	i = 0;
-	while (str[i] != '\0')
+	if (str == NULL)
+		return (-1);
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		j = 0;
-		while (alpha[j] != '\0')
+		for (x = 0; x <= 52; x++)
 		{
-			if (str[i] == alpha[j])
+			if (str[i] == s[x])
 			{
-				str[i] = rot[j];
+				_write(u[x]);
 				break;
 			}
-			j++;
 		}
-		i++;
+		if (x == 53)
+			_write(str[i]);
 	}
-	return (str);
+	return (i);
 }

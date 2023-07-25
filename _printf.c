@@ -4,7 +4,7 @@
  * @form: A string containing all the desired characters
  * Return: Countof characters printed
  */
-int _printf(const char *form, ...)
+int _printf(const char *format, ...)
 {
 	int chars_printed;
 	conver_t f_list[] = {
@@ -23,14 +23,11 @@ int _printf(const char *form, ...)
 	};
 	va_list arg_list;
 
-	if (form == NULL)
+	if (format == NULL)
 		return (-1);
-	va_start(arg_list, form);
+	va_start(arg_list, format);
 	/*Call parser function*/
-	chars_printed = parser(form, f_list, arg_list);
+	chars_printed = parse(format, f_list, arg_list);
 	va_end(arg_list);
 	return (chars_printed);
 }
-
-
-

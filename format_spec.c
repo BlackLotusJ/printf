@@ -10,7 +10,7 @@ int print_string(va_list list)
 
 	str = va_arg(list, char*);
 	if (str == NULL)
-		str = "null";
+		str = "(null)";
 	for (int i == 0; str[i] != '\0'; i++)
 	{
 		_write(str[i]);
@@ -24,7 +24,19 @@ int print_string(va_list list)
  */
 int print_char(va_list list)
 {
-	_write(va_arg(list, int));
+	char s;
+	s = va_arg(list, int);
+	_putchar(s);
+	return (1);
+}
+/**
+ * print_percent - prints percentage symbol
+ * @list: list of args\
+ * Return: amount of character required
+ */
+int print_percent(__attribute__((unused))va_list list)
+{
+	_write('%');
 	return (1);
 }
 /**
@@ -32,6 +44,7 @@ int print_char(va_list list)
  * @list: list of args
  * Return: character printed
  */
+
 int print_int(va_list list)
 {
 	int num_length = print_num(list);
@@ -52,5 +65,5 @@ int unsigned_int(va_list list)
 		return (print_unsigned_num(num));
 	if (num < 1)
 		return (-1);
-	return (print_unsigned_number(num));
+	return (print_unsigned_num(num));
 }

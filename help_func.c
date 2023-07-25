@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * write_base - sends chars to be rinted to stdout
  * @str: string to be parsed
