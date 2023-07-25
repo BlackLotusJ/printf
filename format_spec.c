@@ -24,7 +24,9 @@ int print_string(va_list list)
  */
 int print_char(va_list list)
 {
-	_write(va_arg(list, int));
+	char s;
+	s = va_arg(list, int);
+	_putchar(s);
 	return (1);
 }
 /**
