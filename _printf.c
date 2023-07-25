@@ -26,7 +26,7 @@ int _printf(const char *form, ...)
 	/*Call parser function*/
 	chars_printed = parser(form, f_list, arg_list);
 	va_end(arg_list);
-	return chars_printed;
+	return (chars_printed);
 }
 
 
