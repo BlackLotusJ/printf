@@ -8,19 +8,19 @@
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
-int parse(const char *form, conver_t f_list[], va_list arg_list)
+int parse(const char *format, conver_t f_list[], va_list arg_list)
 {
 	int i, j, r_val, chars_printed;
 
 	chars_printed= 0;
-	for (i = 0; form[i] != '\0'; i++)/* Iterates through the main str*/
+	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
-		if (form[i] == '%') /*Checks for format specifiers*/
+		if (format[i] == '%') /*Checks for format specifiers*/
 		{
 			/*Iterates through struct to find the right func*/
 			for (j = 0; f_list[j].sym != NULL; j++)
 			{
-				if (form[i + 1] == f_list[j].sym[0])
+				if (format[i + 1] == f_list[j].sym[0])
 				{
 					r_val = f_list[j].f(arg_list);
 					if (r_val == -1)
@@ -29,12 +29,12 @@ int parse(const char *form, conver_t f_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (f_list[j].sym == NULL && form[i + 1] != ' ')
+			if (f_list[j].sym == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
-					_write(form[i]);
-					_write(form[i + 1]);
+					_write(format[i]);
+					_write(format[i + 1]);
 					chars_printed = chars_printed + 2;
 				}
 				else
@@ -44,7 +44,7 @@ int parse(const char *form, conver_t f_list[], va_list arg_list)
 		}
 		else
 		{
-			_write(form[i]); /*call the write function*/
+			_write(format[i]); /*call the write function*/
 			chars_printed++;
 		}
 	}
