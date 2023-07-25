@@ -11,7 +11,7 @@
 struct conv
 {
 	char *sym;
-	int (*f)(va_list)
+	int (*f)(va_list);
 };
 typedef struct conv conver_t;
 
