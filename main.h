@@ -18,21 +18,26 @@ struct conv
 typedef struct conv conver_t;
 
 /*Main Functions*/
+int parse(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _write(char c);
-int print_string(va_list list);
-int print_char(va_list list);
-int unsigned_int(va_list list);
-int print_int(va_list list);
-int parse(const char *format, conver_t f_list[], va_list arg_list);
-int print_unsigned_num(unsigned int n);
-int print_num(va_list args);
-int rot13(va_list list);
+int print_string(va_list);
+int print_char(va_list);
+int unsigned_int(va_list);
+int print_int(va_list);
+int print_binary(va_list);
+int print_octal(va_list list);
+int print_hex(va_list list);
+int print_heX(va_list list);
+int print_reversed(va_list arg);
+int print_num(va_list);
+int rot13(va_list);
 
 /*Helper Functions*/
-int reverse_string(char *s);
+int reverse_string(char *);
 void write_base(char *str);
 unsigned int base_len(unsigned int num, int base);
 char *_memcpy(char *src, char *dest, unsigned int n);
+int print_unsgined_number(unsigned int);
 
 #endif /* _MAIN_H */
