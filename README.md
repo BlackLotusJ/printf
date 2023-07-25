@@ -1,1 +1,1 @@
-Repository cintaining the 0x11-printf project
+Repository containing the 0x11-printf project
