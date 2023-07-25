@@ -7,6 +7,7 @@
 int print_string(va_list list)
 {
 	char *str;
+
 	str = va_arg(list, char*);
 	if (str == NULL)
 		str = "null";
@@ -14,7 +15,7 @@ int print_string(va_list list)
 	{
 		_write(str[i]);
 	}
-	return (i);
+	return (1);
 }
 /**
  * print_char - outputs a character
@@ -23,6 +24,6 @@ int print_string(va_list list)
  */
 int print_char(va_list list)
 {
-	_write_char(va_arg (list, int));
+	_write(va_arg(list, int));
 	return (1);
 }
