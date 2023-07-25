@@ -3,6 +3,8 @@
 
 #include <stdarg.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
 /**
  * struct conv - structure for symbols and functions
  * @sym: operator
