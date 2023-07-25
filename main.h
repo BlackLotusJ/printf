@@ -38,6 +38,6 @@ int reverse_string(char *);
 void write_base(char *str);
 unsigned int base_len(unsigned int num, int base);
 char *_memcpy(char *src, char *dest, unsigned int n);
-int print_unsgined_number(unsigned int);
+int print_unsgined_num(unsigned int);
 
 #endif /* _MAIN_H */

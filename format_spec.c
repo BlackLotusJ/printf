@@ -10,7 +10,7 @@ int print_string(va_list list)
 
 	str = va_arg(list, char*);
 	if (str == NULL)
-		str = "null";
+		str = "(null)";
 	for (int i == 0; str[i] != '\0'; i++)
 	{
 		_write(str[i]);
@@ -63,5 +63,5 @@ int unsigned_int(va_list list)
 		return (print_unsigned_num(num));
 	if (num < 1)
 		return (-1);
-	return (print_unsigned_number(num));
+	return (print_unsigned_num(num));
 }
