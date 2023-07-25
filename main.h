@@ -27,6 +27,7 @@ int print_int(va_list list);
 int parse(const char *form, conver_t f_list[], va_list arg_list);
 int print_unsigned_num(unsigned int n);
 int print_num(va_list args);
+int rot13(va_list list);
 
 /*Helper Functions*/
 int reverse_string(char *s);

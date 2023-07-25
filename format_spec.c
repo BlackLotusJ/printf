@@ -28,10 +28,21 @@ int print_char(va_list list)
 	return (1);
 }
 /**
+ * print_percent - prints percentage symbol
+ * @list: list of args\
+ * Return: amount of character required
+ */
+int print_percent(__attribute__((unused))va_list list)
+{
+	_write('%');
+	return (1);
+}
+/**
  * print_int - prints an integer
  * @list: list of args
  * Return: character printed
  */
+
 int print_int(va_list list)
 {
 	int num_length = print_num(list);
