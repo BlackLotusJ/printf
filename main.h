@@ -3,6 +3,17 @@
 
 #include <stdarg.h>
 #include <stdbool.h>
+/**
+ * struct conv - structure for symbols and functions
+ * @sym: operator
+ * @f: Associated function
+ */
+struct conv
+{
+	char *sym;
+	int (*f)(va_list)
+};
+typedef struct conv conver_t;
 
 /*Main Functions*/
 int _printf(const char *format, ...);
