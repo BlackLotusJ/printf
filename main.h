@@ -29,5 +29,9 @@ int print_unsigned_num(unsigned int n);
 int print_num(va_list args);
 
 /*Helper Functions*/
+int reverse_string(char *s);
+void write_base(char *str);
+unsigned int base_len(unsigned int num, int base);
+char *_memcpy(char *src, char *dest, unsigned int n);
 
 #endif /* _MAIN_H */
