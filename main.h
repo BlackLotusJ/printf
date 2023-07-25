@@ -25,6 +25,8 @@ int print_char(va_list list);
 int unsigned_int(va_list list);
 int print_int(va_list list);
 int parse(const char *form, conver_t f_list[], va_list arg_list);
+int print_unsigned_num(unsigned int n);
+int print_num(va_list args);
 
 /*Helper Functions*/
 
