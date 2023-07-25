@@ -6,19 +6,28 @@
  */
 int _printf(const char *form, ...)
 {
-	va_list args;
-	va_start(args,form);
+	int chars_printed;
+	conver_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_integer},
+		{"b", print_binary},
+		{"r", print_reversed},
+		{"o", print_octal},
+		{"x", print_hex},
+		{NULL, NULL}
+	};
+	va_list arg_list;
 
-	while (*form != '\0')
-	{
-		if (*form == '%')
-		{
-			form++;
-			switch (*form)
-			{
-				case 'c':
-					{
-						char c = va_ar
+	if (form == NULL)
+		return (-1);
+	va_start(arg_list, form);
+	/*Call parser function*/
+	chars_printed = parser(form, f_list, arg_list);
+	va_end(arg_list);
+	return chars_printed;
+}
 
 
 
