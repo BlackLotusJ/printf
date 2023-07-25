@@ -35,6 +35,7 @@ int print_char(va_list list)
 int print_int(va_list list)
 {
 	int num_length = print_num(list);
+
 	return (num_length);
 }
 /**
