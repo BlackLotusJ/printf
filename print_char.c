@@ -1,16 +1,13 @@
 #include "main.h"
 
 /**
- * printf_char - prints a binary number
- * @args: the arguements 
- * @printed: the printed characters
- * Return: printed charcaters
+ * print_char - Prints character
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
  */
 
-int print_char(va_list args, int chars_printed)
+int print_char(va_list list)
 {
-	int ch = va_arg(args, int);
-
-	_putchar(ch);
-	return (chars_printed + 1);
+	_putchar(va_arg(list, int));
+	return (1);
 }
