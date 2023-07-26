@@ -1,53 +1,50 @@
 #include "main.h"
-
 /**
- * parse - selects the appropriate specifiers
- * @args: arguements
- * @chars_printed: the printed characters
- * @format: the format specifier
- * Return: printed charcaters
+ * parse - Receives the main string and all the
+ * necessary parameters to print a formated string.
+ * @format: A string containing all the desired characters.
+ * @f_list: A list of all the posible functions.
+ * @arg_list: A list containing all the argumentents passed to the program.
+ * Return: A total count of the characters printed.
  */
-
-int parse(const char *format, va_list args, int chars_printed)
+int parse(const char *format, conver_t f_list[], va_list arg_list)
 {
-	switch (*format)
+	int i, j, r_val, printed_chars;
+
+	printed_chars = 0;
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		case 'd':
-		case 'i':
-			chars_printed = print_integer(args, chars_printed);
-			break;
-		case 'c':
-			_putchar(va_arg(args, int));
-			chars_printed++;
-			break;
-		case 's':
-			chars_printed = print_string(args, chars_printed);
-			break;
-		case '%':
-			_putchar('%');
-			chars_printed++;
-			break;
-		case 'b':
-			chars_printed = print_binary(va_arg(args, unsigned int), chars_printed);
-			break;
-		case 'x':
-		case 'X':
-			chars_printed = _x(va_arg(args, unsigned int), chars_printed, (*format == 'X') ? 1 : 0);
-			break;
-		case 'o':
-			chars_printed = print_octal(va_arg(args, unsigned int), chars_printed);
-			break;
-		case 'u':
-			chars_printed = print_unsigned(va_arg(args, unsigned int), chars_printed);
-			break;
-		case 'r':
-			chars_printed = print_reversed(args, chars_printed);
-			break;
-		case 'p':
-			chars_printed = print_pointer(args, chars_printed);
-			break;
-		default:
-			break;
+		if (format[i] == '%')
+		{
+			for (j = 0; f_list[j].sym != NULL; j++)
+			{
+				if (format[i + 1] == f_list[j].sym[0])
+				{
+					r_val = f_list[j].f(arg_list);
+					if (r_val == -1)
+						return (-1);
+					printed_chars += r_val;
+					break;
+				}
+			}
+			if (f_list[j].sym == NULL && format[i + 1] != ' ')
+			{
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					printed_chars = printed_chars + 2;
+				}
+				else
+					return (-1);
+			}
+			i = i + 1;
+		}
+		else
+		{
+			_putchar(format[i]);
+			printed_chars++;
+		}
 	}
-	return (chars_printed);
+	return (printed_chars);
 }

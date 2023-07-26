@@ -1,40 +1,54 @@
 #include "main.h"
+
 /**
- * print_integer - prints intiger number
- * @args: number arguements
- * @chars_printed: printed characters
- * Return: printed charcaters
+ * print_integer - Prints an integer
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
  */
-int print_integer(va_list args, int chars_printed)
+
+int print_integer(va_list list)
 {
-	int num = va_arg(args, int);
-	int digits = 0;
-	int temp = num;
-	int digit;
+	int num_length;
 
-	if (num < 0)
+	num_length = print_number(list);
+	return (num_length);
+}
+
+
+/**
+ * print_number - prints a number send to this function
+ * @args: List of arguments
+ * Return: The number of arguments printed
+ */
+
+int print_number(va_list args)
+{
+	int n;
+	int div;
+	int len;
+	unsigned int num;
+
+	n  = va_arg(args, int);
+	div = 1;
+	len = 0;
+
+	if (n < 0)
 	{
-		chars_printed += _putchar('-');
-		num = -num;
-
-		temp = num;
+		len += _putchar('-');
+		num = n * -1;
 	}
-	do {
-		digits++;
-		temp /= 10;
-	} while (temp != 0);
-	while (digits > 0)
+	else
+		num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
 	{
-		int i, pow10 = 1;
-
-		for (i = 1; i < digits; i++)
-		{
-			pow10 *= 10;
-		}
-		digit = num / pow10;
-		chars_printed += _putchar(digit + '0');
-		num -= digit * pow10;
-		digits--;
+		len += _putchar('0' + num / div);
+		num %= div;
+		div /= 10;
 	}
-	return (chars_printed);
+
+	return (len);
 }
