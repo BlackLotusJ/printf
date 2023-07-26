@@ -15,7 +15,7 @@ int _putchar(char c);
 int print_string(va_list args, int chars_printed);
 int print_char(va_list args, int chars_printed);
 int print_integer(va_list args, int chars_printed);
-int print_binary(unsigned int num. int chars_printed);
+int print_binary(unsigned int num, int chars_printed);
 int print_octal(unsigned int num, int chars_printed);
 int print_hex(va_list list);
 int print_heX(va_list list);
