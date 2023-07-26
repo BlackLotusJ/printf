@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			chars_printed = selector(format, args, chars_printed);
+			chars_printed = parse(format, args, chars_printed);
 			format++;
 		}
 		else

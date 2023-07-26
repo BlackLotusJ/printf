@@ -2,7 +2,6 @@
 #define _MAIN_H
 
 #include <stdarg.h>
-#include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -20,14 +19,6 @@ int print_octal(unsigned int num, int chars_printed);
 int print_hex(va_list list);
 int print_heX(va_list list);
 int print_reversed(va_list args, int chars_printed);
-int print_num(va_list);
 int rot13(va_list);
 
-/*Helper Functions*/
-int reverse_string(char *);
-void write_base(char *str);
-unsigned int base_len(unsigned int num, int base);
-char *_memcpy(char *src, char *dest, unsigned int n);
-int print_unsgined_num(unsigned int);
-
-#endif /* _MAIN_H */
+#endif
