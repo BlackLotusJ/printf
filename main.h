@@ -20,9 +20,9 @@ typedef struct conv conver_t;
 /*Main Functions*/
 int parse(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
-int _write(char c);
+int _putchar(char c);
 int print_string(va_list);
-int print_char(va_list);
+int print_char(va_list, int chars_printed);
 int unsigned_int(va_list);
 int print_int(va_list);
 int print_binary(va_list);

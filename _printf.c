@@ -1,33 +1,32 @@
 #include "main.h"
 /**
  * _printf - custom printf function
- * @form: A string containing all the desired characters
+ * @format: A string containing all the desired characters
  * Return: Countof characters printed
  */
 int _printf(const char *format, ...)
 {
-	int chars_printed;
-	conver_t f_list[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"d", print_integer},
-		{"i", print_integer}
-		{"b", print_binary},
-		{"r", print_reversed},
-		{"o", print_octal},
-		{"x", print_hex},
-		{"X", print_heX},
-		{"R", rot13},
-		{NULL, NULL}
-	};
-	va_list arg_list;
+	int chars_printed = 0;
 
-	if (format == NULL)
-		return (-1);
-	va_start(arg_list, format);
-	/*Call parser function*/
-	chars_printed = parse(format, f_list, arg_list);
-	va_end(arg_list);
+	va_list args;
+
+	va_start(args, format);
+
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
+			chars_printed = selector(format, args, chars_printed);
+			format++;
+		}
+		else
+		{
+			_putchar(*format);
+			chars_printed++;
+			format++;
+		}
+	}
+	va_end(args);
 	return (chars_printed);
 }
