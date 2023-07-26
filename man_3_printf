@@ -1,0 +1,80 @@
+					man_3_printf 3 "July 2023" "Version 1.0" "User Commands"
+
+NAME
+	_printf() - custom printf function
+
+SYNOPSIS
+	#include <custom_printf.h>
+	int _printf(const char *format, ...);
+	int _putchar(char c);
+	int _parse(const char *format, conver_t f_list[], va_list arg_list);
+
+DESCRIPTION
+	The _printf function prints formatted output to the standard output. It is a custom implementation of the standard C library's printf function.
+
+MAIN FUNCTIONS
+	The main functions of the custom printf library are:
+	
+	int _printf(const char *format, ...); - Prints formatted output based on the format string provided. It supports various format specifiers for different data types.
+	
+	_putchar(char c); - Writes a single character c to the standard output.
+	
+	int _parse(const char *format, conver_t f_list[], va_list arg_list); - Parses the format string and calls the appropriate conversion functions based on the format specifiers encountered.
+
+FORMAT SPECIFIERS
+	The custom printf function supports the following format specifiers:
+
+	%c - Prints a single character.
+
+	%s - Prints a string of characters.
+
+	%d - Prints a signed integer.
+
+	%i - Same as %d (for compatibility).
+
+	%u - Prints an unsigned integer.
+
+	%o - Prints an unsigned integer in octal format.
+
+	%x- Prints an unsigned integer in lowercase hexadecimal format.
+
+	%X - Prints an unsigned integer in uppercase hexadecimal format.
+
+	%p - Prints a pointer address.
+
+	%b - Prints an unsigned integer in binary format.
+
+	%S - Prints a string, replacing non-printable characters with escape sequences.
+
+	%r - Prints a string in reverse order.
+
+	%R - Prints a string encoded using ROT13 cipher.
+
+RETURN VALUE
+	The _printf function returns the number of characters printed, excluding the null terminator, or a negative value if an error occurs.
+
+EXAMPLES
+	The following example demonstrates the usage of custom printf function:
+		#include <custom_printf.h>
+		int main() 
+		{
+			_printf("Hello, %s! The answer is %d and the character is %c\n", "world", 42, 'A');
+			return (0);
+		}
+
+SEE ALSO
+	printf(3), stdarg(3)
+
+AUTHORS
+The custom printf library was developed by Jerry Kiche and Luke Kapesa.
+
+BUGS
+Report bugs to jerrykiche61@gmail.com
+
+COPYRIGHT
+Copyright [2023] [Jerry Kiche]
+
+LICENSE
+This software is distributed under the license.
+
+
