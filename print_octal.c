@@ -1,35 +1,40 @@
 #include "main.h"
 /**
- * print_octal - prints a binary number
- * @num: number of arguements
- * @printed: the printed characters
- * Return: printed charcaters
+ * print_octal - Prints the numeric representation of a number in octal base
+ * @list: List of all the arguments passed to the program
+ * Return: Number of symbols printed to stdout
  */
-int print_octal(unsigned int num, int chars_printed)
+int print_octal(va_list list)
 {
-	int oct[100], i = 0, j;
+	unsigned int num;
+	int len;
+	char *octal_rep;
+	char *rev_str;
 
-	while (num != 0)
-	{
-		int remainder = num % 8;
+	num = va_arg(list, unsigned int);
 
-		oct[i] = 48 + remainder;
-		i++;
-		num /= 8;
-	}
+	if (num == 0)
+		return (_putchar('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 8);
 
-	if (i == 0)
+	octal_rep = malloc(sizeof(char) * len + 1);
+	if (octal_rep == NULL)
+		return (-1);
+	for (len = 0; num > 0; len++)
 	{
-		_putchar('0');
-		chars_printed++;
+		octal_rep[len] = (num % 8) + 48;
+		num = num / 8;
+
 	}
-	else
-	{
-		for (j = i - 1; j >= 0; j--)
-		{
-			_putchar(oct[j]);
-			chars_printed++;
-		}
-	}
-	return (chars_printed);
+	octal_rep[len] = '\0';
+	rev_str = rev_string(octal_rep);
+	if (rev_str == NULL)
+		return (-1);
+
+	write_base(rev_str);
+	free(octal_rep);
+	free(rev_str);
+	return (len);
 }
