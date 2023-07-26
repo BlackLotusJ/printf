@@ -1,9 +1,8 @@
-#include "main1.h"
+#include "main.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _putchar - writes the character
+ * @c: character to be printed
+ * Return: 1 success
  */
 int _putchar(char c)
 {
