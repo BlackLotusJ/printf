@@ -19,6 +19,5 @@ int print_octal(unsigned int num, int chars_printed);
 int print_hex(va_list list);
 int print_heX(va_list list);
 int print_reversed(va_list args, int chars_printed);
-int rot13(va_list);
 
 #endif
