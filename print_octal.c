@@ -17,7 +17,7 @@ int print_octal(va_list list)
 		return (_putchar('0'));
 	if (num < 1)
 		return (-1);
-	len = base_len(num, 8);
+	len = base_length(num, 8);
 
 	octal_rep = malloc(sizeof(char) * len + 1);
 	if (octal_rep == NULL)
@@ -29,11 +29,11 @@ int print_octal(va_list list)
 
 	}
 	octal_rep[len] = '\0';
-	rev_str = rev_string(octal_rep);
+	rev_str = reverse_string(octal_rep);
 	if (rev_str == NULL)
 		return (-1);
 
-	write_base(rev_str);
+	out_base(rev_str);
 	free(octal_rep);
 	free(rev_str);
 	return (len);
