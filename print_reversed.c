@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * printf_reverse - prints a binary number
+ * print_reversed - prints a binary number
  * @args: arguements
  * @chars_printed: the printed characters
  * Return: printed charcaters
  */
-int printf_reverse(va_list args, int chars_printed)
+int print_reversed(va_list args, int chars_printed)
 {
 	char *str = va_arg(args, char *);
 	int len = 0, i;
