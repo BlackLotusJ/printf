@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg_list, format);
-	printed_chars = parse(format, f_list, arg_list);
+	printed_chars = _parse(format, f_list, arg_list);
 	va_end(arg_list);
 	return (printed_chars);
 }

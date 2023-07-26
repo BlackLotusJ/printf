@@ -41,11 +41,12 @@ int print_String(va_list val);
 int print_pointer(va_list val);
 int print_rev(va_list l);
 int print_rot13(va_list list);
+
 /*ADDITIONAL FUNCTIONS*/
 int print_number(va_list args);
-unsigned int base_len(unsigned int, int);
-char *rev_string(char *);
-void write_base(char *str);
+unsigned int base_length(unsigned int, int);
+char *reverse_string(char *);
+void out_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int print_unsgined_number(unsigned int n);
 int hex_check(int num, char x);
@@ -53,4 +54,5 @@ int print_hex_aux(unsigned long int num);
 int isNonAlphaNumeric(char c); 
 int _puts(char *str);
 char *convert(unsigned long int num, int base, int lowercase);
+
 #endif
