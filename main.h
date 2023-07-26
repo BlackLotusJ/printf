@@ -5,17 +5,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
-/**
- * struct conv - structure for symbols and functions
- * @sym: operator
- * @f: Associated function
- */
-struct conv
-{
-	char *sym;
-	int (*f)(va_list);
-};
-typedef struct conv conver_t;
+#include <stdio.h>
+#include <limits.h>
 
 /*Main Functions*/
 int parse(const char *format, va_list args, int chars_printed);
@@ -28,7 +19,7 @@ int print_binary(unsigned int num. int chars_printed);
 int print_octal(unsigned int num, int chars_printed);
 int print_hex(va_list list);
 int print_heX(va_list list);
-int print_reversed(va_list arg);
+int print_reversed(va_list args, int chars_printed);
 int print_num(va_list);
 int rot13(va_list);
 
