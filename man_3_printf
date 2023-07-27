@@ -66,15 +66,15 @@ SEE ALSO
 	printf(3), stdarg(3)
 
 AUTHORS
-The custom printf library was developed by Jerry Kiche and Luke Kapesa.
+	The custom printf library was developed by Jerry Kiche and Luke Kapesa.
 
 BUGS
-Report bugs to jerrykiche61@gmail.com
+	Report bugs to jerrykiche61@gmail.com
 
 COPYRIGHT
-Copyright [2023] [Jerry Kiche]
+	Copyright [2023] [Jerry Kiche]
 
 LICENSE
-This software is distributed under the license.
+	This software is distributed under the license.
 
 
