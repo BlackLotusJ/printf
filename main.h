@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-<<<<<<< HEAD
-#define NULL_STRING "(null)"
-#define NULL '\0'
-=======
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
@@ -21,7 +17,6 @@
 /* SIZES */
 #define S_LONG 2
 #define S_SHORT 1
->>>>>>> fc86462ef2148822f875baa480706702f6741de0
 
 /**
  * struct fmt - Struct op
