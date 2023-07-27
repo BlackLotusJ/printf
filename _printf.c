@@ -36,8 +36,3 @@ int _printf(const char *format, ...)
 	va_end(arg_list);
 	return (printed_chars);
 }
-int main()
-{
-        _printf("Hello, %s! The answer is %d and the character is %c\n", "world", 42, 'A');
-        return (0);
-}
