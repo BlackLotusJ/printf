@@ -52,6 +52,8 @@ int _printf(const char *format, ...)
 
 	return (printed_chars);
 }
+<<<<<<< HEAD
+=======
 
 /**
  * print_buffer - Prints the contents of the buffer if it exist
@@ -65,3 +67,4 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 }
+>>>>>>> ad93ee993213cbe722992703c58ed14db120ba74
