@@ -55,7 +55,7 @@ RETURN VALUE
 
 EXAMPLES
 	The following example demonstrates the usage of custom printf function:
-		#include <custom_printf.h>
+		#include <_printf.h>
 		int main() 
 		{
 			_printf("Hello, %s! The answer is %d and the character is %c\n", "world", 42, 'A');
