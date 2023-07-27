@@ -8,7 +8,7 @@
 #include <limits.h>
 
 #define NULL_STRING "(null)"
-#define NUL '\0'
+#define NULL '\0'
 
 /**
  * struct convert - defines a structure for symbols and functions
